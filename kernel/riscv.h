@@ -1,5 +1,30 @@
 #ifndef __ASSEMBLER__
 
+//new syscalls helper functions yaha add hoge
+static inline uint64
+rdcycle()
+{
+  uint64 x;
+  asm volatile("rdcycle %0" : "=r" (x));
+  return x;
+}
+
+static inline uint64
+rdtime()
+{
+  uint64 x;
+  asm volatile("rdtime %0" : "=r" (x));
+  return x;
+}
+
+static inline uint64
+rdRinstr()
+{
+  uint64 x;
+  asm volatile("rdinstret %0" : "=r" (x));
+  return x;
+}
+
 // which hart (core) is this?
 static inline uint64
 r_mhartid()

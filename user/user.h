@@ -1,3 +1,6 @@
+#include "kernel/types.h"
+#include "kernel/stat.h"
+
 #ifdef LAB_MMAP
 typedef unsigned long size_t;
 typedef long int off_t;
@@ -26,6 +29,10 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+uint64 rdcycle(void);
+uint64 rdtime(void);
+uint64 rdinstret(void);
+
 #ifdef LAB_NET
 int bind(uint32);
 int unbind(uint32);

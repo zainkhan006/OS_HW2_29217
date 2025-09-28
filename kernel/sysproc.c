@@ -16,6 +16,24 @@ sys_exit(void)
 }
 
 uint64
+sys_rdcycle(void)
+{
+  return rdcycle();
+}
+
+uint64
+sys_rdtime(void)
+{
+  return rdtime();
+}
+
+uint64
+sys_rdinstret(void)
+{
+  return rdRinstr();
+}
+
+uint64
 sys_getpid(void)
 {
   return myproc()->pid;

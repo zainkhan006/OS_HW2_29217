@@ -113,6 +113,10 @@ extern uint64 sys_pgpte(void);
 extern uint64 sys_kpgtbl(void);
 #endif
 
+extern uint64 sys_rdcycle(void);
+extern uint64 sys_rdtime(void);
+extern uint64 sys_rdinstret(void);
+
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
 static uint64 (*syscalls[])(void) = {
@@ -137,6 +141,9 @@ static uint64 (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+[SYS_rdcycle] sys_rdcycle,
+[SYS_rdtime]  sys_rdtime,
+[SYS_rdinstret] sys_rdinstret,
 #ifdef LAB_NET
 [SYS_bind] sys_bind,
 [SYS_unbind] sys_unbind,
